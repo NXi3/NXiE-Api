@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "outDir": "../../dist/api"
+    "outDir": "../../dist/apps/api"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "web/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }

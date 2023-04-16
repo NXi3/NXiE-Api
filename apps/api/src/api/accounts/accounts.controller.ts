@@ -1,9 +1,9 @@
 import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Public } from '@security/security/interfaces/auth.interface';
-import { Roles } from '@security/security/roles/decorators/roles.decorator';
-import { Role } from '@security/security/roles/enum/role.enum';
+import { Public } from '../../security/interfaces/auth.interface';
+import { Roles } from '../../security/roles/decorators/roles.decorator';
+import { Role } from '../../security/roles/enum/role.enum';
 
 @ApiTags('Account Management: Basic Account Registration & Login')
 @Controller('accounts')

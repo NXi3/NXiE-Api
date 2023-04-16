@@ -5,7 +5,15 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/api/tsconfig.app.json"
+    "tsConfigPath": "apps/api/tsconfig.app.json",
+    "assets": [
+      {
+        "include": "apps/api/web/",
+        "outDir": "dist/apps/api/web",
+        "watchAssets": true
+      }
+    ],
+    "watchAssets": true
   },
   "monorepo": true,
   "root": "apps/api",
@@ -44,15 +52,6 @@
       "sourceRoot": "libs/configuration/src",
       "compilerOptions": {
         "tsConfigPath": "libs/configuration/tsconfig.lib.json"
-      }
-    },
-    "security": {
-      "type": "library",
-      "root": "libs/security",
-      "entryFile": "index",
-      "sourceRoot": "libs/security/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/security/tsconfig.lib.json"
       }
     }
   }

@@ -16,7 +16,8 @@ import { Profile } from './profile.entity';
 import { Address } from './address.entity';
 import { Billing } from './billing.entity';
 import { Exclude } from 'class-transformer';
-import Role from '@security/security/roles/entities/role.entity';
+import Role from '../../../security/roles/entities/role.entity';
+import { Post } from '../../posts/entities/post.entity';
 
 @Entity('user', { schema: 'accounts' })
 export class User {
@@ -67,9 +68,9 @@ export class User {
   @ApiProperty()
   billing: Billing;
 
-  // // // SOCIAL ENTITIES
-  // @OneToMany(() => Post, (post: Post) => post.authorId)
-  // public posts?: Post[];
+  // // SOCIAL ENTITIES
+  @OneToMany(() => Post, (post: Post) => post.authorId)
+  public posts?: Post[];
 
   @ManyToMany(() => Role, {
     cascade: true,

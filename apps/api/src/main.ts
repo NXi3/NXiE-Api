@@ -19,8 +19,8 @@ async function bootstrap() {
   });
 
   // CORE BACKUP SERVER
-  app.useStaticAssets(join(__dirname, '..', 'web/assets'));
-  app.setBaseViewsDir(join(__dirname, '..', 'web/www'));
+  app.useStaticAssets(join(__dirname, './web/assets'));
+  app.setBaseViewsDir(join(__dirname, '../web/www'));
   app.setViewEngine('ejs');
 
   const globalPrefix = 'v1';

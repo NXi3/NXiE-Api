@@ -37,5 +37,10 @@
         "libs/security/src/*"
       ]
     }
-  }
+  },
+  "include": [
+    "apps/api/src/**/*",
+    "apps/api/web/**/*",
+    "libs/**/*"
+  ],
 }

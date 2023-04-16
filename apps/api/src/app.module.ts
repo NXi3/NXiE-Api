@@ -3,11 +3,13 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 import { APP_GUARD } from '@nestjs/core';
 import { DatabaseModule } from '@database/database';
-import { AuthGuard } from '@security/security/guards/auth.guard';
-import { RolesGuard } from '@security/security/guards/roles.guard';
-import { SecurityModule } from '@security/security';
+import { AppController } from './app.controller';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { SecurityModule } from './security/security.module';
+import { AuthGuard } from './security/guards/auth.guard';
+import { RolesGuard } from './security/guards/roles.guard';
+import { PostsModule } from './api/posts/posts.module';
 
 @Module({
   imports: [
@@ -48,13 +50,18 @@ import { join } from 'path';
         MQTT_HOST: Joi.string().required(),
       }),
     }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '../web/www'),
-    }),
     DatabaseModule,
     SecurityModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'web/www'),
+      renderPath: '/',
+      serveStaticOptions: {
+        extensions: ['ejs'],
+      },
+    }),
+    PostsModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [
     {
       provide: APP_GUARD,
