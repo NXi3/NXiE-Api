@@ -16,6 +16,20 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@database/database": [
+        "libs/database/src"
+      ],
+      "@database/database/*": [
+        "libs/database/src/*"
+      ],
+      "@configuration/configuration": [
+        "libs/configuration/src"
+      ],
+      "@configuration/configuration/*": [
+        "libs/configuration/src/*"
+      ]
+    }
   }
 }
