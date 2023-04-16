@@ -10,6 +10,8 @@ import { SecurityModule } from './security/security.module';
 import { AuthGuard } from './security/guards/auth.guard';
 import { RolesGuard } from './security/guards/roles.guard';
 import { PostsModule } from './api/posts/posts.module';
+import { VideosModule } from './api/videos/videos.module';
+import { ImagesModule } from './api/images/images.module';
 
 @Module({
   imports: [
@@ -60,6 +62,8 @@ import { PostsModule } from './api/posts/posts.module';
       },
     }),
     PostsModule,
+    VideosModule,
+    ImagesModule,
   ],
   controllers: [AppController],
   providers: [

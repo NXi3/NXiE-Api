@@ -45,7 +45,7 @@ export class AccountsController {
   async update() {}
 
   @Roles(Role.Admin)
-  @ApiOperation({ summary: 'Delete Account Profile' })
+  @ApiOperation({ summary: 'Delete Account Profile [Admin Only]' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   @Delete('delete')
   async delete() {}
