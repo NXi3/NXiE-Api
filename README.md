@@ -1,0 +1,5 @@
+# NXiE
+
+```
+npm run docs
+```
