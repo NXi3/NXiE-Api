@@ -35,7 +35,7 @@ export class AccountsController {
   @Roles(Role.User)
   @ApiOperation({ summary: 'Access Account Profile' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
-  @Get('profile')
+  @Get()
   async profile() {}
 
   @Roles(Role.User)

@@ -12,7 +12,8 @@
 .env
 .env.dev
 docker-compose.yml
-
+./docs/node_modules
+./docs/build
 ###################################
 # ----| [ OTHERS IGNORED  ] |---- #
 ###################################

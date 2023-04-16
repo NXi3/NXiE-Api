@@ -12,6 +12,7 @@ import { RolesGuard } from './security/guards/roles.guard';
 import { PostsModule } from './api/posts/posts.module';
 import { VideosModule } from './api/videos/videos.module';
 import { ImagesModule } from './api/images/images.module';
+import { MediaModule } from './media/media.module';
 
 @Module({
   imports: [
@@ -64,6 +65,7 @@ import { ImagesModule } from './api/images/images.module';
     PostsModule,
     VideosModule,
     ImagesModule,
+    MediaModule,
   ],
   controllers: [AppController],
   providers: [
