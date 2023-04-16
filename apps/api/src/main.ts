@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { join } from 'path';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { microServices } from '@configuration/configuration/function/microservice';
 import { setupSwagger } from '@configuration/configuration/function/swagger';
@@ -16,6 +17,11 @@ async function bootstrap() {
       methods: ['GET', 'POST', 'PUT'],
     },
   });
+
+  // CORE BACKUP SERVER
+  app.useStaticAssets(join(__dirname, '..', 'web/assets'));
+  app.setBaseViewsDir(join(__dirname, '..', 'web/www'));
+  app.setViewEngine('ejs');
 
   const globalPrefix = 'v1';
   app.setGlobalPrefix(globalPrefix);

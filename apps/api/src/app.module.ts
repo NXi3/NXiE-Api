@@ -6,6 +6,8 @@ import { DatabaseModule } from '@database/database';
 import { AuthGuard } from '@security/security/guards/auth.guard';
 import { RolesGuard } from '@security/security/guards/roles.guard';
 import { SecurityModule } from '@security/security';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -45,6 +47,9 @@ import { SecurityModule } from '@security/security';
         // MQTT VALIDATION
         MQTT_HOST: Joi.string().required(),
       }),
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '../web/www'),
     }),
     DatabaseModule,
     SecurityModule,

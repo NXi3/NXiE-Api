@@ -6,12 +6,12 @@ export function setupSwagger(app: INestApplication) {
     .setTitle('NXiE API [nxie.uk]')
     .setLicense('NXi License', 'https://license.nxie.uk')
     .setVersion('1.0')
-    .setDescription(
-      'Everything provided by the NXiE API, can be accessed through our SaaS. Both provide Services for the M³ Blockchain, with little to no configuration required.',
-    )
-    .setContact('M³ Support Team', 'mailto:support@metacubic.org', '')
-    .setTermsOfService('https://metacubic.org/terms')
-    .setExternalDoc('M³ Documentation', 'https://docs.metacubic.org')
+    // .setDescription(
+    //   'Everything provided by the NXiE API, can be accessed through our SaaS. Both provide Services for the M³ Blockchain, with little to no configuration required.',
+    // )
+    // .setContact('M³ Support Team', 'mailto:support@metacubic.org', '')
+    // .setTermsOfService('https://metacubic.org/terms')
+    // .setExternalDoc('M³ Documentation', 'https://docs.metacubic.org')
     .addSecurity('bearer', {
       type: 'http',
       scheme: 'bearer',
@@ -25,7 +25,7 @@ export function setupSwagger(app: INestApplication) {
     // })
     .addSecurityRequirements('bearer')
     .addBearerAuth()
-    .addTag('M³ BaaS API', 'SaaS [metacubic.org]')
+    .addTag('NXiE Core Api', '[nxie.uk]')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   const extraOptions = {
