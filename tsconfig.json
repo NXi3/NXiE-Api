@@ -29,6 +29,12 @@
       ],
       "@configuration/configuration/*": [
         "libs/configuration/src/*"
+      ],
+      "@security/security": [
+        "libs/security/src"
+      ],
+      "@security/security/*": [
+        "libs/security/src/*"
       ]
     }
   }

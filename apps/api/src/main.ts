@@ -1,8 +1,47 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { microServices } from '@configuration/configuration/function/microservice';
+import { setupSwagger } from '@configuration/configuration/function/swagger';
+
+const chalk = require('chalk');
+declare const module: any;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  // CORE SERVER
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    logger: ['error', 'warn', 'debug'],
+    cors: {
+      origin: '*',
+      methods: ['GET', 'POST', 'PUT'],
+    },
+  });
+
+  const globalPrefix = 'v1';
+  app.setGlobalPrefix(globalPrefix);
+  const p = process.env.NODE_PORT || 3021;
+
+  microServices();
+  setupSwagger(app);
+  await app.listen(p, () => {
+    console.log(
+      chalk
+        .hex('#ffdd00')
+        .bold(
+          `---| [NXiE Core] Global URL: http://localhost:${p}/${globalPrefix}`,
+        ),
+    );
+    console.log(
+      chalk
+        .hex('#ffdd00')
+        .bold(`---| [NXiE Discord] Global URL: http://localhost:3022/v2`),
+    );
+  });
+  await app.startAllMicroservices();
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
-bootstrap();
+void bootstrap();

@@ -156,7 +156,8 @@
     ],
     "moduleNameMapper": {
       "^@database/database(|/.*)$": "<rootDir>/libs/database/src/$1",
-      "^@configuration/configuration(|/.*)$": "<rootDir>/libs/configuration/src/$1"
+      "^@configuration/configuration(|/.*)$": "<rootDir>/libs/configuration/src/$1",
+      "^@security/security(|/.*)$": "<rootDir>/libs/security/src/$1"
     }
   }
 }

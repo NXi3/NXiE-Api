@@ -45,6 +45,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/configuration/tsconfig.lib.json"
       }
+    },
+    "security": {
+      "type": "library",
+      "root": "libs/security",
+      "entryFile": "index",
+      "sourceRoot": "libs/security/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/security/tsconfig.lib.json"
+      }
     }
   }
 }
