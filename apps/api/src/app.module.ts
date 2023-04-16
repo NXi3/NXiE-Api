@@ -5,6 +5,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { DatabaseModule } from '@database/database';
 import { AuthGuard } from '@security/security/guards/auth.guard';
 import { RolesGuard } from '@security/security/guards/roles.guard';
+import { SecurityModule } from '@security/security';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { RolesGuard } from '@security/security/guards/roles.guard';
       }),
     }),
     DatabaseModule,
+    SecurityModule,
   ],
   controllers: [],
   providers: [
