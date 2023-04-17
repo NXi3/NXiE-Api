@@ -235,7 +235,7 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Roles(Role.User)<br />@ApiOperation({summary: &#x27;Access Account Profile&#x27;})<br />@ApiResponse({status: 403, description: &#x27;Forbidden.&#x27;})<br />@Get(&#x27;profile&#x27;)<br /></code>
+                    <code>@Roles(Role.User)<br />@ApiOperation({summary: &#x27;Access Account Profile&#x27;})<br />@ApiResponse({status: 403, description: &#x27;Forbidden.&#x27;})<br />@Get()<br /></code>
                 </td>
             </tr>
 
@@ -391,7 +391,7 @@ export class AccountsController {
   @Roles(Role.User)
   @ApiOperation({ summary: &#x27;Access Account Profile&#x27; })
   @ApiResponse({ status: 403, description: &#x27;Forbidden.&#x27; })
-  @Get(&#x27;profile&#x27;)
+  @Get()
   async profile() {}
 
   @Roles(Role.User)

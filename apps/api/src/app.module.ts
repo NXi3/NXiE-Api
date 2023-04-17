@@ -9,10 +9,8 @@ import { join } from 'path';
 import { SecurityModule } from './security/security.module';
 import { AuthGuard } from './security/guards/auth.guard';
 import { RolesGuard } from './security/guards/roles.guard';
-import { PostsModule } from './api/posts/posts.module';
-import { VideosModule } from './api/videos/videos.module';
-import { ImagesModule } from './api/images/images.module';
-import { MediaModule } from './media/media.module';
+import { AccountsModule } from "./api/accounts/accounts.module";
+
 
 @Module({
   imports: [
@@ -62,10 +60,7 @@ import { MediaModule } from './media/media.module';
         extensions: ['ejs'],
       },
     }),
-    PostsModule,
-    VideosModule,
-    ImagesModule,
-    MediaModule,
+    AccountsModule,
   ],
   controllers: [AppController],
   providers: [

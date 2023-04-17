@@ -10,7 +10,7 @@
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "----| [ DOCS ] |----": "",
     "hads": "cd docs && hads -o",
-    "compodoc": "npx @compodoc/compodoc -p tsconfig.json -s",
+    "compodoc": "npx @compodoc/compodoc -p tsconfig.json -s -o",
     "docosaurus": "cd docs && npx docusaurus start",
     "----| [ BUILD ] |----": "",
     "build:api": "nest build api && npm run copy:assets",
