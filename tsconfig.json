@@ -43,5 +43,5 @@
     "apps/api/web/**/*",
     "libs/**/*"
   ],
-  "extends": "@tsconfig/docusaurus/tsconfig.json",
+  "extends": "@tsconfig/docusaurus/tsconfig.json"
 }

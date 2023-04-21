@@ -6,7 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { LocalStrategy } from './strategies/local.strategy';
 import { RolesModule } from './roles/roles.module';
 import { jwtConstants } from './constants';
-
+89
 @Module({
   imports: [
     AccountsModule,

@@ -26,6 +26,7 @@ async function bootstrap() {
   const globalPrefix = 'v1';
   app.setGlobalPrefix(globalPrefix);
   const p = process.env.NODE_PORT || 3021;
+  const d = process.env.DISCORD_PORT || 3022;
 
   microServices();
   setupSwagger(app);
@@ -33,14 +34,7 @@ async function bootstrap() {
     console.log(
       chalk
         .hex('#ffdd00')
-        .bold(
-          `---| [NXiE Core] Global URL: http://localhost:${p}/${globalPrefix}`,
-        ),
-    );
-    console.log(
-      chalk
-        .hex('#ffdd00')
-        .bold(`---| [NXiE Discord] Global URL: http://localhost:3022/v2`),
+        .bold(`---| [NXiE: Global Api] http://localhost:${p}/${globalPrefix}`),
     );
   });
   await app.startAllMicroservices();

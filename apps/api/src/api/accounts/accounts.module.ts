@@ -9,10 +9,11 @@ import { Address } from './entities/address.entity';
 import { PostsModule } from '../posts/posts.module';
 import { ImagesModule } from '../images/images.module';
 import { VideosModule } from '../videos/videos.module';
+import { VaultService } from '../../security/vault/vault.service';
 
 @Module({
   controllers: [AccountsController],
-  providers: [AccountsService],
+  providers: [AccountsService, VaultService],
   imports: [
     TypeOrmModule.forFeature([User, Profile, Billing, Address]),
     PostsModule,

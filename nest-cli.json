@@ -53,6 +53,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/configuration/tsconfig.lib.json"
       }
+    },
+    "media": {
+      "type": "application",
+      "root": "apps/media",
+      "entryFile": "main",
+      "sourceRoot": "apps/media/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/media/tsconfig.app.json"
+      }
     }
   }
 }

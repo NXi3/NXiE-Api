@@ -9,8 +9,7 @@ import { join } from 'path';
 import { SecurityModule } from './security/security.module';
 import { AuthGuard } from './security/guards/auth.guard';
 import { RolesGuard } from './security/guards/roles.guard';
-import { AccountsModule } from "./api/accounts/accounts.module";
-
+import { AccountsModule } from './api/accounts/accounts.module';
 
 @Module({
   imports: [
