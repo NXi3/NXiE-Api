@@ -62,6 +62,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/media/tsconfig.app.json"
       }
+    },
+    "openai": {
+      "type": "application",
+      "root": "apps/openai",
+      "entryFile": "main",
+      "sourceRoot": "apps/openai/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/openai/tsconfig.app.json"
+      }
     }
   }
 }

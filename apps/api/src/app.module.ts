@@ -73,6 +73,4 @@ import { AccountsModule } from './api/accounts/accounts.module';
     },
   ],
 })
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export class AppModule {}
