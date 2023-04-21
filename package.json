@@ -93,6 +93,7 @@
     "node-docker-api": "^1.1.22",
     "node-vault": "^0.9.22",
     "nodemailer": "^6.9.1",
+    "openai": "^3.2.1",
     "ovenlivekit": "^1.1.0",
     "ovenplayer": "^0.10.26",
     "passport": "^0.6.0",
